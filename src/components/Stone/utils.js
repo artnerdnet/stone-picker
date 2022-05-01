@@ -39,3 +39,20 @@ export const getStoneWidth = (size) => {
       return '250px'
   }
 };
+
+export const getStoneToolbarSize = (size) => {
+  switch (size) {
+    case 'xs':
+      return '35px'
+    case 's':
+      return '45px'  
+    case 'm':
+      return '55px'  
+    case 'l':
+      return '66px'  
+    case 'xl':
+      return '85px'  
+    default:
+      break;
+  }
+}

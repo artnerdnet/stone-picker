@@ -8,7 +8,7 @@ import { useDataContext } from '../../context/context.js'
 
 const StyledContainer = styled.div`
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
 `
 
 export const Container = ({ hideSourceOnDrag }) => {
@@ -16,7 +16,6 @@ export const Container = ({ hideSourceOnDrag }) => {
   const [stoneCollection, setStoneCollection] = useState({});
 
   useEffect(() => {
-    console.log(dataContext,'dataContext')
     setStoneCollection(dataContext)
   }, [dataContext])
   

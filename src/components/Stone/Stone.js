@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { getStoneWidth, getStoneImage } from './utils';
 import { useDataContext } from '../../context/context.js';
 import { StoneImage } from './StoneImage';
 
-const StyledImage = styled.img`
-  width: ${(props) => getStoneWidth(props.size)};
-`
 const StyledLabel = styled.input`
   margin: 8px 0;
+  padding: 8px;
+  text-transform: uppercase;
+  text-align: center;
 `
 
 const StyledCloseIcon = styled.span`
@@ -17,7 +16,6 @@ const StyledCloseIcon = styled.span`
   top: 0;
   right: 0;
   padding: 4px;
-  z-index: 999;
 `
 
 export const Stone = ({ size = 'm', id = null}) => {
