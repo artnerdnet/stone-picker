@@ -21,7 +21,7 @@ export const Screenshot = ({currentRef}) => {
 
   return (
     <Button clickHandler={getImage}>
-      Save landscape
+      save as image
     </Button>
   );
 }

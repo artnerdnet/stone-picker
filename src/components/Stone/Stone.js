@@ -5,10 +5,13 @@ import { Close } from '../Common/Close.js';
 import { StoneImage } from './StoneImage';
 
 const StyledLabel = styled.input`
+  font-size: 10px;
   margin: 8px 0;
   padding: 8px;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
+  height: 18px;
+  width: 85%;
 `
 
 export const Stone = ({ size = 'm', id = null}) => {

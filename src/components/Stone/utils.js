@@ -26,17 +26,17 @@ export const getStoneImage = (size) => {
 export const getStoneWidth = (size) => {
   switch (size) {
     case 'xs':
-      return '100px'
+      return '65px'
     case 's':
-      return '130px'
+      return '90px'
     case 'm':
-      return '180px'
+      return '120px'
     case 'l':
-      return '230px'
+      return '160px'
     case 'xl':
-      return '250px'
+      return '170px'
     default:
-      return '250px'
+      return '180px'
   }
 };
 
