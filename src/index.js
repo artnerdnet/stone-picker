@@ -11,6 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <DataContextProvider initialValue={collectionOfStones}>
+      <div id="modal"></div>
       <App />
     </DataContextProvider>
   </React.StrictMode>

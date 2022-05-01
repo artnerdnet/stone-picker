@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDataContext } from '../../context/context.js';
+import { Close } from '../Common/Close.js';
 import { StoneImage } from './StoneImage';
 
 const StyledLabel = styled.input`
@@ -10,26 +11,36 @@ const StyledLabel = styled.input`
   text-align: center;
 `
 
-const StyledCloseIcon = styled.span`
-  font-size: 12px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 4px;
-`
-
 export const Stone = ({ size = 'm', id = null}) => {
   const [label, setLabel] = useState(null);
   const { dataContext, setDataContext } = useDataContext();
 
   const removeStone = () => {
-    const dataContextUpdated = {...dataContext}
+    const dataContextUpdated = {...dataContext};
     delete dataContextUpdated[id];
-    setDataContext(dataContextUpdated)
+    setDataContext(dataContextUpdated);
   }
+
+  const updateLabel = () => {
+    const dataContextUpdated = {...dataContext};
+    dataContextUpdated[id].label = label;
+    setDataContext(dataContextUpdated)
+  };
+
+  useEffect(() => {
+    setLabel(dataContext[id]?.label)
+  }, [])
+
+  useEffect(() => {    
+    if (label) {
+      updateLabel()
+    }
+  }, [label])
+  
+
   return (
     <div>
-      <StyledCloseIcon onClick={removeStone} >&#10006;</StyledCloseIcon>
+      <Close clickHandler={removeStone}/>
       <StyledLabel type="text" id={`fStoneLabel${id}`} name={`fStoneLabel${id}`} defaultValue={label} onChange={e => setLabel(e.target.value)} />
       <StoneImage size={size} />
     </div>

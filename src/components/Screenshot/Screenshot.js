@@ -1,14 +1,6 @@
 import React, { useEffect } from 'react'
 import { useScreenshot, createFileName } from 'use-react-screenshot'
-import styled from 'styled-components';
-
-const StyledButton = styled.button`
-  background: #f9cf2d;
-  border: none;
-  padding: 8px;
-  border-radius: 5px;
-  text-transform: lowercase;
-`
+import { Button } from '../Common/Button';
 
 export const Screenshot = ({currentRef}) => {
   const [image, takeScreenshot] = useScreenshot()
@@ -28,8 +20,8 @@ export const Screenshot = ({currentRef}) => {
 
 
   return (
-    <StyledButton onClick={getImage}>
+    <Button clickHandler={getImage}>
       Save landscape
-    </StyledButton>
+    </Button>
   );
 }
